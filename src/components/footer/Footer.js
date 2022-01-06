@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from "next/link";
-import LogoImg from "../footer/Footer";
+import LogoImg from "../../../public/nike-logo.png";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
     return (
-        <div className="footer__main">
-            <div className="footer__logo">
+        <div className={styles.footer__main}>
+            <div className={styles.footer__logo}>
                 <img src={LogoImg.src} alt="Nike" />
             </div>
         </div>

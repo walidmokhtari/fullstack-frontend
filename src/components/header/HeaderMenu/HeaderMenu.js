@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import styles from "./HeaderMenu.module.scss";
 
 const Headermenu = () => {
     return (
-        <div classsName="header__menu">
+        <div className={styles.header__menu}>
             <nav>
                 <ul>
                     <li>

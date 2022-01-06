@@ -1,10 +1,12 @@
 import React from 'react';
 import Link from "next/link";
+import styles from "./HeaderToolbar.module.scss";
+
 const Headertoolbar = () => {
     return (
-        <div className="header__toolbar">
+        <div className={styles.header__toolbar}>
             <Link href="/login">
-                <a>
+                <a className="btn btn-white">
                     Login
                 </a>
             </Link>
