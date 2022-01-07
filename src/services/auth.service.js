@@ -24,5 +24,16 @@ export default {
             }
         })
         .then(res => res.json())
+    },
+    updateUser(token, user) {
+        return fetch('http://localhost:3131/api/v1/users/update-user', {
+            method: "PUT",
+            headers: {
+                "authorization": token,
+                "content-type":"application/json"
+            },
+            body: JSON.stringify(user),
+        })
+        .then(res => res.json())
     }
 }
