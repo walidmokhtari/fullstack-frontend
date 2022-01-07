@@ -1,15 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import authService from "../services/auth.service";
 
 const withAuth = (WrappedComponent) => {
   return (props) => {
+    const router = useRouter();
     const [verify, setVerify] = useState(false);
-    //On va chercher le token
-    //On consomme un endpoint de vérification de token qui renvoie true ou false
-    //dans le useEffect
-    // À l'intérieur du then
-    // - cas 1: si true return <WrappedComponent {..props}/>
-    // - cas 2 : Si false on redirige sur login
-    // - remove du localsotrage
+
+    useEffect(() => {
+      const token = localStorage.getItem("token");
+      authService
+        .verifyToken(token)
+        .then((data) => {
+          if (data.verify) {
+            setVerify(true);
+          } else {
+            localStorage.removeItem("token");
+            router.push("/login");
+          }
+        })
+        .catch((err) => {
+          localStorage.removeItem("token");
+          router.push("/login");
+        });
+    }, []);
+    if (verify) {
+      return <WrappedComponent {...props} />;
+    } else {
+      return null;
+    }
   };
 };
 

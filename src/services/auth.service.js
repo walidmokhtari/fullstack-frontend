@@ -35,5 +35,13 @@ export default {
             body: JSON.stringify(user),
         })
         .then(res => res.json())
+    },
+    verifyToken(token) {
+        return fetch('http://localhost:3131/api/v1/users/verifytoken', {
+            headers: {
+                "authorization":token
+            }
+        })
+        .then(res => res.json())
     }
 }
