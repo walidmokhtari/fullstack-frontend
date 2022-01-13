@@ -1,5 +1,6 @@
 import React from 'react';
 import TitlePage from "../../components/UI/Title/TitlePage";
+import Input from "../../components/UI/Input/Input";
 const Index = () => {
     return (
         <div>
