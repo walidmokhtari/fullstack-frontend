@@ -27,7 +27,7 @@ const Index = () => {
         <div className="shop__grid">
             {
                 data.getProducts.map((product) => ( 
-                    <Link href = {`/shop/${product.id}`}>
+                    <Link href = {`/shop/${product.id}`} key={product.id}>
                     <a>
                     <ProductCard 
                         id = {product.id}
