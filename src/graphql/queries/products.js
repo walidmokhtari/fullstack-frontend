@@ -8,3 +8,13 @@ export const getProducts = gql`
         price}
     }
 `
+
+export const getProduct = gql`
+    query getProduct($id: ID){
+        getProduct(id : $id) {
+            id,
+            title,
+            price
+        }
+    }
+`
