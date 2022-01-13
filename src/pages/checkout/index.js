@@ -2,7 +2,7 @@ import React from "react";
 import TitlePage from '../../components/UI/Title/TitlePage';
 
 
-const Index = () => {
+export default const Index = () => {
 
     return (
         <div>
@@ -10,3 +10,4 @@ const Index = () => {
         </div>
     )
 }
+
