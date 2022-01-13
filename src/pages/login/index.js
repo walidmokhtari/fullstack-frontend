@@ -2,7 +2,7 @@ import React from 'react';
 import TitlePage from "../../components/UI/Title/TitlePage";
 import Input from "../../components/UI/Input/Input";
 
-import styles from "./index.module.scss";
+import styles from "../register/index.module.scss";
 const Index = () => {
     return (
         <div>
